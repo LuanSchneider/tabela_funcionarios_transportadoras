@@ -1,15 +1,12 @@
-// Função para calcular a soma de uma coluna
-function calcularSoma(coluna) {
+function calcularSoma() {
     var tabela = document.getElementById("tabelaTransporte");
     var soma = 0;
     
     // Loop através de todas as linhas e soma os valores da coluna especificada
     for (var i = 1; i < tabela.rows.length; i++) {
-        soma += Number(tabela.rows[i].cells[coluna].innerText);
+        soma += Number(tabela.rows[i].cells[8].innerText);
     }
     
-    return soma;
+    // Exibe o resultado no parágrafo com id "resultado"
+    document.getElementById("resultado").innerText = "Soma dos valores: R$" + soma;
 }
-
-// Exemplo de como usar a função para calcular a soma da coluna "Valor (R$)"
-console.log("Soma dos valores: R$" + calcularSoma(8));
