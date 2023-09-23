@@ -4,7 +4,7 @@ function calcularSoma() {
     
     // Loop através de todas as linhas e soma os valores da coluna especificada
     for (var i = 1; i < tabela.rows.length; i++) {
-        soma += Number(tabela.rows[i].cells[8].innerText);
+        soma 
     }
     
     // Exibe o resultado no parágrafo com id "resultado"
