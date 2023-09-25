@@ -10,3 +10,13 @@ function calcularSoma() {
     // Exibe o resultado no parágrafo com id "resultado"
     document.getElementById("resultado").innerText = "Soma dos valores: R$" + soma;
 }
+// Primeiro, obtenha todas as linhas da tabela
+var linhas = document.getElementById('tabelaTransporte').rows;
+
+// Em seguida, adicione um ouvinte de evento a cada linha
+for (var i = 0; i < linhas.length; i++) {
+  linhas[i].addEventListener('click', function() {
+    // Quando uma linha é clicada, adicione um "x" à primeira célula
+    this.cells[0].innerText = 'x';
+  });
+}
