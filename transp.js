@@ -4,16 +4,14 @@ function calcularSoma() {
 
   // Loop através de todas as linhas e soma os valores da coluna especificada
   for (var i = 1; i < tabela.rows.length; i++) {
-      soma += parseFloat(tabela.rows[i].cells[7].innerText);
+      var valor = tabela.rows[i].cells[7].value;
+      valor = parseFloat(valor.replace("R$", "").replace(",", "."));
+      soma += valor;
   }
 
   // Exibe o resultado no parágrafo com id "resultado"
-  document.getElementById("resultado").innerText = "Soma dos valores: R$" + soma.toFixed(2);
+  document.getElementById("resultado").textContent = "Soma dos valores: R$" + soma.toFixed(2);
 }
-// Primeiro, obtenha todas as linhas da tabela
-var linhas = document.getElementById('tabelaTransporte').rows;
-
-// Em seguida, adicione um ouvinte de evento a cada linha
 for (var i = 0; i < linhas.length; i++) {
   linhas[i].addEventListener('click', function() {
     // Quando uma linha é clicada, adicione um "x" à primeira célula
