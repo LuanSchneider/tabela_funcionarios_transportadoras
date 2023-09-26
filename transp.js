@@ -1,16 +1,19 @@
-function calcularSoma() {
+function calcularSoma () {
+  // Obtenha a tabela pelo ID
   var tabela = document.getElementById("tabelaTransporte");
+
+  // Inicialize a soma total
   var soma = 0;
 
-  // Loop através de todas as linhas e soma os valores da coluna especificada
+  // Percorra todas as linhas e some os valores da coluna especificada
   for (var i = 1; i < tabela.rows.length; i++) {
-      var valor = tabela.rows[i].cells[7].value;
+      var valor = tabela.rows[i].cells[7].innerText;
       valor = parseFloat(valor.replace("R$", "").replace(",", "."));
       soma += valor;
   }
 
-  // Exibe o resultado no parágrafo com id "resultado"
-  document.getElementById("resultado").textContent = "Soma dos valores: R$" + soma.toFixed(2);
+  // Atualize o resultado com a soma total
+  document.getElementById("resultado").textContent = "Soma dos valores: ", soma;toFixed(2);
 }
 for (var i = 0; i < linhas.length; i++) {
   linhas[i].addEventListener('click', function() {
