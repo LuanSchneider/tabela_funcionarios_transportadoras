@@ -1,30 +1,28 @@
-function calcularSoma() {
-  // Obtenha a tabela pelo ID
-  var tabela = document.getElementById("tabelaTransporte");
+function calcularSoma2(){
+var soma = 0;
+var tabela = document.getElementsByTagName("table")[0]; // Obtém a primeira tabela na página
 
-  // Inicialize a soma total
-  var soma = 0;
-
-  // Percorra todas as linhas e some os valores da coluna especificada
-  for (var i = 1; i < tabela.rows.length; i++) {
-      var valor = tabela.rows[i].cells[7].innerText;
-      valor = parseFloat(valor.replace("R$", "").replace(",", "."));
-      soma += valor;
-  }
-
-  // Formate a soma para incluir pontos e vírgulas corretamente
-  soma = soma.toFixed(2).toString();
-  soma = soma.replace(/(\d)(\d{8})$/,"$1.$2"); // Coloca o ponto dos milhões
-  soma = soma.replace(/(\d)(\d{5})$/,"$1.$2"); // Coloca o ponto dos milhares
-  soma = soma.replace(/(\d)(\d{2})$/,"$1,$2"); // Coloca a vírgula antes dos 2 últimos dígitos
-
-  // Atualize o resultado com a soma total
-  document.getElementById("resultado").textContent = "Soma dos valores: R$" + soma;
+// Loop através das linhas da tabela
+for (var i = 0; i < tabela.rows.length; i++) {
+    var row = tabela.rows[i];
+    for (var j = 0; j < row.cells.length; j++) {
+      var cellValue = parseFloat(row.cells[8] ? row.cells[8].textContent : "0");
+      // Converte o texto da célula em um número
+        if (!isNaN(cellValue)) {
+            soma += cellValue; // Adiciona o valor da célula à soma se for um número
+        }
+    }
 }
 
-for (var i = 0; i < linhas.length; i++) {
-  linhas[i].addEventListener('click', function() {
-    // Quando uma linha é clicada, adicione um "x" à primeira célula
-    this.cells[0].innerText = 'x';
-  });
+// Exibe a soma no elemento "resultado"
+var resultadoElement = document.getElementById("resultado");
+resultadoElement.textContent = "Soma dos valores: R$" + soma.toFixed(2); // Arredonda a soma para 2 casas decimais
+
+  for (var i = 0; i < linhas.length; i++) {
+    linhas[i].addEventListener('click', function() {
+      // Quando uma linha é clicada, adicione um "x" à primeira célula
+      this.cells[0].innerText = 'x';
+    });
+  }
+  
 }
