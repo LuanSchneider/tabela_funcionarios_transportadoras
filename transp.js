@@ -1,12 +1,12 @@
 function calcularSoma2(){
 var soma = 0;
-var tabela = document.getElementsByTagName("table")[0]; // Obtém a primeira tabela na página
-
+var tabela = document.getElementById("tabelaTransporte"); // Obtém a primeira tabela na página
+console.log(tabela)
 // Loop através das linhas da tabela
 for (var i = 0; i < tabela.rows.length; i++) {
     var row = tabela.rows[i];
     for (var j = 0; j < row.cells.length; j++) {
-      var cellValue = parseFloat(row.cells[8] ? row.cells[8].textContent : "0");
+      var cellValue = parseFloat(row.cells[7] ? row.cells[7].textContent : "0");
       // Converte o texto da célula em um número
         if (!isNaN(cellValue)) {
             soma += cellValue; // Adiciona o valor da célula à soma se for um número
