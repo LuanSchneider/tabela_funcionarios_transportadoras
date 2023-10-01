@@ -1,14 +1,13 @@
-function calcularSomaValor(coluna) {
-  let sum = 0;
-  for (let i = 0; i < coluna.length; i++) {
-    sum += parseFloat(coluna[7].textContent);
-  }
-  return sum;
+var tabela = document.getElementById('minhaTabela');
+var total = 0;
+
+for (var i = 1; i < tabela.rows.length; i++) {
+    var valorCelula = parseFloat(tabela.rows[i].cells[7].innerHTML);
+    total += valorCelula;
 }
 
-let coluna = [ "7"];
-let resultado = somarColuna(coluna);
-console.log(resultado); // 15
+console.log('A soma da coluna é: ' + total);
+
   for (var i = 0; i < linhas.length; i++) {
     linhas[i].addEventListener('click', function() {
       // Quando uma linha é clicada, adicione um "x" à primeira célula
