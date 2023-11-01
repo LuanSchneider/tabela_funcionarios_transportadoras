@@ -2,7 +2,9 @@
 font-family: 'Arial', sans-serif;
 background-color: #f3f2f7;
 color: #4b0082;
+
 }
+
 #tabelaTransporte {
 width: 80%;
 margin: 20px auto;
@@ -11,10 +13,12 @@ border-collapse: collapse;
 #tabelaTransporte th {
 background-color: #4b0082;
 color: white;
+
 }
 #tabelaTransporte td, #tabelaTransporte th {
 border: 1px solid #ddd;
 padding: 8px;
+
 }
 #tabelaTransporte tr:nth-child(even){background-color: #e6e6fa;}
 #tabelaTransporte tr:hover {background-color: #d8bfd8;}

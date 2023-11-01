@@ -12,7 +12,7 @@ for (var i = 2; i < tabela.rows.length; i++) {
 console.log('A soma da coluna é: ' + total);
 }
   for (var i = 0; i < linhas.length; i++) {
-    linhas[i].addEventListener('click', function() {
+    rows[i].addEventListener('click', function() {
      
       this.cells[0].innerText = 'x';
     });
