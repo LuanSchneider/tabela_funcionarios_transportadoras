@@ -3,7 +3,7 @@ var tabela = document.getElementById('tabelaTransporte');
 
 
 for (var i = 2; i < tabela.rows.length; i++) {
-    var valorCelula = parseFloat(tabela.rows[i].cells[7].innerHTML);
+    var valorCelula = parseFloat(imput(tabela.rows[i].cells[7].innerHTML));
     
     total += valorCelula;
     
