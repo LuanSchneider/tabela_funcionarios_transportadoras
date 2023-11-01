@@ -6,9 +6,11 @@ color: #4b0082;
 }
 
 #tabelaTransporte {
-width: 80%;
+width: 89%;
 margin: 20px auto;
 border-collapse: collapse;
+border: 8px solid rgb(2, 2, 2);
+border-radius: 8px,8px,8px,8px;
 }
 #tabelaTransporte th {
 background-color: #4b0082;
